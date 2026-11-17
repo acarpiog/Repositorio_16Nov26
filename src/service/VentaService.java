@@ -41,6 +41,7 @@ public class VentaService {
         if (ventaActual == null) {
             Console.error("No hay venta activa");
             return;
+            
         }
 
         Producto producto = productoService.buscarProducto(idProducto);
@@ -61,7 +62,7 @@ public class VentaService {
 
     public void finalizarVenta() {
 
-        if (ventaActual == null) {
+       if (ventaActual == null) {
             Console.error("No hay venta activa");
             return;
         }
@@ -74,6 +75,11 @@ public class VentaService {
     }
 
     public Venta obtenerVentaActual() {
+         if (ventaActual == null) {
+            Console.error("No hay venta activa");
+       
+            
+        }
         return ventaActual;
     }
 }
